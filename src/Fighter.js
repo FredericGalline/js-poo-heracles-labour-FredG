@@ -10,24 +10,17 @@ class Fighter {
     this.life = MAX_LIFE;
   }
 
-  getRandom(max) {
-    return Math.floor(Math.random() * max) + 1;
-  }
-
   fight(ennemy) {
-    let result = this.life;
-    let damage = this.getRandom(this.strength);
+    let damage = Math.floor(Math.random() * this.strength) + 1;
     let dodge = damage - ennemy.dexterity;
 
-    ennemy.life = dodge > 0 ? ennemy.life - dodge : ennemy.life;
+    if (dodge > 0) {
+      ennemy.life = ennemy.life - dodge;
+    }
 
-    result =
-      ennemy.life > 0 && this.life > 0
-        ? (result = `${ennemy.name} 🗡️ ${this.name} 💙 ${this.name} : ${this.life}`)
-        : (result = `\n💀 ${ennemy.name} is dead\n🏆 ${this.name} (💙 ${this.life})`);
-
-    return result;
+    return ennemy.life > 0 && this.life > 0
+      ? `${ennemy.name} 🗡️ ${this.name} 💙 ${this.name} : ${this.life}`
+      : `\n💀 ${ennemy.name} is dead\n🏆 ${this.name} (💙 ${this.life})`;
   }
 }
-
 module.exports = Fighter;
