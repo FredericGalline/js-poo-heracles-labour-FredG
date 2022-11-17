@@ -75,3 +75,4 @@ Heracles enters the cave, the lion is there, his red eyes pointed towards the in
 Once you're done, feel free to tweak the code and add new features.
 You will be given a "clean" code at the start of the next workshop.
 # js-poo-heracles-labour-FredG
+# js-poo-heracles-labour-FredG
